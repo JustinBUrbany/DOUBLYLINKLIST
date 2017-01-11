@@ -1,5 +1,5 @@
-#ifndef LINK_H
-#define LINK_H
+#ifndef LIST_H
+#define LIST_H
 #include "Node.h"
 
 
@@ -32,4 +32,54 @@ public:
 };
 
 
-#endif LINK_H
+#endif LIST_H
+
+
+template<typename T>
+inline List<T>::List()
+{
+}
+
+template<typename T>
+inline List<T>::List(Node * head, Node * tail)
+{
+}
+
+template<typename T>
+inline List<T>::~List()
+{
+}
+
+template<typename T>
+inline List & List<T>::operator=(const List & rhs)
+{
+	// TODO: insert return statement here
+}
+
+template<typename T>
+inline bool List<T>::isEmpty()
+{
+	return false;
+}
+
+template<typename T>
+inline const T & List<T>::First()
+{
+	// TODO: insert return statement here
+}
+
+template<typename T>
+inline const T & List<T>::Last()
+{
+	// TODO: insert return statement here
+}
+
+template<typename T>
+inline void List<T>::Prepend(Node * NN)
+{
+}
+
+template<typename T>
+inline void List<T>::Append(Node * NN)
+{
+}
