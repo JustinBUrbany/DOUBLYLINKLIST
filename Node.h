@@ -10,6 +10,7 @@ class Node
 {
 	friend List<T>;
 public:
+	
 	Node(const Node & copy);
 	Node & operator =(const Node & rhs);
 	~Node();
@@ -19,6 +20,7 @@ public:
 	Node * getPrev()const;
 	T getData()const;
 private:
+
 	Node();
 	Node(T Data);
 	T	m_Data;
@@ -32,11 +34,13 @@ private:
 template<typename T>
 inline Node<T>::Node():m_Next(nullptr), m_Previous(nullptr)
 {
+	m
 }
 
 template<typename T>
-inline Node<T>::Node(T Data):m_Data(Data),m_Next(nullptr),m_Previous(nullptr)
+inline Node<T>::Node(T Data):m_Data(Data)
 {
+
 }
 
 template<typename T>

@@ -4,14 +4,18 @@ using std::cout;
 
 
 #include "List.h"
+#include "Node.h"
 
 
 int main()
 {
+	int test = 6;
+
+	List<char> mylist;
+	List<int> newlist;
 	
-	List<int> int_list;
 
-
+	cout << "Got to be kidding me";
 
 	return 0;
 }

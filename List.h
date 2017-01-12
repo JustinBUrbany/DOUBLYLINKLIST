@@ -9,7 +9,8 @@ class List
 {
 public:
 	List();
-	List(Node<T> * head, Node<T> * tail);
+	//List(T data);
+	//List(Node<T> * head, Node<T> * tail);
 	List(const List & copy);
 	~List();
 	List & operator =(const List & rhs);
@@ -34,23 +35,26 @@ private:
 
 
 template<typename T>
-inline List<T>::List()
-{
-	//m_Tail = m_Head;
-	//m_Head->m_Next = nullptr;
-	//m_Head->m_Previous = nullptr;
+inline List<T>::List(): m_Head(nullptr), m_Tail(nullptr)
+{	
 }
 
-template<typename T>
-inline List<T>::List(Node<T> * head, Node<T> * tail)
-{
-	m_Head = head;
-	m_Tail = tail;
-	m_Head->m_Next = m_Tail;
-	m_Tail->m_Previous = m_Head;
-	m_Head->m_Previous = nullptr;
-	m_Tail->m_Next = nullptr;
-}
+//template<typename T>
+//inline List<T>::List(T data)
+//{
+	//m_Head.m_Data = data;
+//}
+
+//template<typename T>
+//inline List<T>::List(Node<T> * head, Node<T> * tail)
+//{
+	//m_Head = head;
+	//m_Tail = tail;
+	//m_Head->m_Next = m_Tail;
+	//m_Tail->m_Previous = m_Head;
+	//m_Head->m_Previous = nullptr;
+	//m_Tail->m_Next = nullptr;
+//}
 
 template<typename T>
 inline List<T>::~List()
@@ -74,7 +78,7 @@ template<typename T>
 inline bool List<T>::isEmpty()
 {
 	bool empty = true;
-	if (m_Head->m_Next != nullptr)
+	if (m_Head != nullptr)
 	{
 		empty = false;
 	}
@@ -96,21 +100,40 @@ inline const T & List<T>::Last()
 template<typename T>
 inline void List<T>::Prepend(Node<T> * NN)
 {
+	NN->m_Previous = nullptr;
+	NN->m_Next = m_Head;
+	m_Head = NN;
 }
 
 template<typename T>
 inline void List<T>::Append(Node<T> * NN)
 {
+
+	NN->m_Next = nullptr;
+	NN->m_Previous = m_Tail;
+	m_Tail = NN;
 }
 
 template<typename T>
 inline void List<T>::Purge()
 {
+	Node<T> * travel = new Node<T>;
+	travel = m_Head->m_Next;
+	while (!isEmpty)
+	{
+		delete m_Head;
+		m_Head = travel;
+		travel = m_Head->m_Next;
+	}
 }
 
 template<typename T>
 inline void List<T>::Extract(Node<T> * NN)
 {
+	if (!isempty)
+	{
+
+	}
 }
 
 template<typename T>
