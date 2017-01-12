@@ -13,10 +13,10 @@ public:
 	Node(const Node & copy);
 	Node & operator =(const Node & rhs);
 	~Node();
-	Node getNext()const;
+	Node * getNext()const;
 	void setNext(Node * next);
 	void SetPrev(Node * Prev);
-	Node getPrev()const;
+	Node * getPrev()const;
 	T getData()const;
 private:
 	Node();
